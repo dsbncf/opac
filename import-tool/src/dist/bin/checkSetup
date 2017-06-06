@@ -1,0 +1,8 @@
+#!/bin/bash
+
+CLASS=bncf.opac.tools.CheckSetup
+
+JAR=lib/import-tool-2.0-SNAPSHOT.jar
+
+java -cp $JAR $CLASS
+

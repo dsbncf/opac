@@ -1,0 +1,22 @@
+
+
+-- --------------------------------------------------
+--	Table structure for table  TITOLO
+-- --------------------------------------------------
+
+-- DROP TABLE IF EXISTS TITOLO;
+
+CREATE TABLE TITOLO
+(
+  ID		IDENTITY PRIMARY KEY NOT NULL,
+  OCCORENZE	INT DEFAULT 0 NOT NULL,
+  NOME		VARCHAR(1200) NOT NULL,
+  NOMENORM	VARCHAR(200) NOT NULL
+);
+
+
+CALL FTL_CREATE_INDEX('PUBLIC', 'TITOLO', 'NOMENORM');
+-- CALL FTL_DROP_INDEX('PUBLIC', 'TITOLO');
+
+-- CALL FT_CREATE_INDEX('PUBLIC', 'TITOLO', 'NOMENORM');
+-- CALL FT_DROP_INDEX('PUBLIC', 'TITOLO');

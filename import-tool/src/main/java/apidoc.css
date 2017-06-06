@@ -1,0 +1,9 @@
+
+@import url(stylesheet.css);
+
+body { font-size: 10pt; }
+table { border-collapse: collapse; }
+
+.tbl td,th	{ padding:2px 6px; border:1px solid #aaa; }
+.tbl th		{ background:#ddd; }
+

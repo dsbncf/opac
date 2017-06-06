@@ -1,0 +1,21 @@
+
+
+-- --------------------------------------------------
+--	Table structure for table  AUTORE
+-- --------------------------------------------------
+
+-- DROP TABLE IF EXISTS AUTORE;
+
+CREATE TABLE AUTORE
+(
+  ID		IDENTITY PRIMARY KEY NOT NULL,
+  OCCORENZE	INT DEFAULT 0 NOT NULL,
+  NOME		VARCHAR(300) NOT NULL,
+  NOMENORM	VARCHAR(200) NOT NULL
+);
+
+CALL FTL_CREATE_INDEX('PUBLIC', 'AUTORE', 'NOMENORM');
+-- CALL FTL_DROP_INDEX('PUBLIC', 'AUTORE');
+
+-- CALL FT_CREATE_INDEX('PUBLIC', 'AUTORE', 'NOMENORM');
+-- CALL FT_DROP_INDEX('PUBLIC', 'AUTORE');
