@@ -1,0 +1,79 @@
+body {
+    font-size: 10px; /* Resets 1em to 10px */
+    font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif;
+    background-color: white; /*#d5d6d7;*/
+}
+
+#header {
+    padding: 5px;
+}
+
+#welcome {
+    padding: 5px;
+}
+
+#menu {
+	background-color: #e0e0e0;
+	padding-left: 2em;
+	font-size: 1.2em;
+}
+
+#main {
+    min-width: 500px;
+
+}
+
+#searching {
+
+}
+
+#footer {
+
+}
+
+#results, #facets{
+    text-align: left;
+    margin-left: 20px;
+}
+
+
+.gray{
+    background-color: lightgray;
+}
+
+.white{
+    background-color: white;
+}
+
+.facet{
+    padding: 10px;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.boxed {
+    border: 1px black solid;
+    padding: 5px;
+    margin: 5px;
+    width: 80%;
+}
+
+div#menu span {
+    padding-right: 15px;
+}
+
+.label {
+    font-weight: bold;
+
+}
+
+form div {
+    padding: 5px;
+}
+
+a img {
+	border: none;
+}
+

@@ -1,0 +1,99 @@
+/* Inizio ToolBar */
+
+#deweynav {
+	font-size: 0.9em;
+}
+table.toolbar {
+	width: 100%;
+	font-size: 12px;
+	background-color: #CCCCFF;
+	height: 20px;	
+	border-collapse: collapse;
+}
+
+table.toolbar td {
+	font-weight: bold;
+	white-space: nowrap;
+	padding-left: 4px;
+	padding-right: 4px
+}
+
+table.toolbar td.last {
+	width: 99%;
+	text-align: left;
+}
+
+/* Fine ToolBar */
+
+
+
+table.list {
+	width: 100%;
+	font-size: 1.5em;
+	background-color: #808080;
+	border-collapse: collapse;
+	border: 1px solid #D6D3CE;
+}
+
+table tr A:link		{text-decoration: none;}
+table tr A:visited	{text-decoration: none;}
+table tr A:active	{text-decoration: none}
+table tr A:hover	{text-decoration: underline; color: blue}
+
+table.list tr {
+	background-color: #FFFFFF;
+	height: 22px;
+}
+
+table.list tr.highlited {
+	background-color: #F0F0F0;
+}
+
+table.list tr.selected {
+	background-color: #FFFFA0;
+}
+
+table.list tr.expired {
+	background-color: #FF7979;
+}
+
+table.list th {
+	white-space: nowrap;  
+	text-align: center;
+	font-weight: bold;   
+	background-color: #E4E4E4;
+	border: 1px solid #D6D3CE;
+	margin: 0px;	
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+table.list th.icon {
+	width: 20px;
+	height: 20px;
+	margin: 0px;	
+	padding: 0px;
+}
+
+table.list td {
+	border: 1px solid #D6D3CE;
+	margin: 0px;	
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+table.list td.icon {
+	width: 20px;
+	height: 20px;
+	margin: 0px;	
+	padding: 0px;
+}
+  
+table.list td.number {
+	text-align: right;
+}
+

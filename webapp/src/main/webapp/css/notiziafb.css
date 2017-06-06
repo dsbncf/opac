@@ -1,0 +1,90 @@
+hr	{
+	background-color: #aaa;
+	height: 1px;
+	border: none;
+}
+
+.titolo{
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.edizione {
+	font-size: 1.1em;
+}
+
+.materiale {
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-style: italic;
+}
+
+.collocazione {
+	font-style: italic;
+}
+
+.note {
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 1.1em;
+}
+
+.avv {
+	font-family: times;
+	font-size: 1.1em;
+	padding-left: 8px;
+}
+
+.colloc {
+	border: 1px solid #E0E0E0;
+}
+.colloc td {
+	font-size: 1em;
+}
+
+#notizia {
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 0.9em;
+	width: 95%;
+	margin: auto;
+	margin-top: 2em;
+        color: black;
+}
+
+div#fb-control {
+	width: 100%;
+	border-top: 1px solid grey;
+	padding-top: 20px;
+	margin-top: 5px;
+}
+
+div#fb-control div#fb-control-left {
+	float: left;
+	width: 26%;
+	text-align: left;
+	padding-left: 28px;
+}
+
+div#fb-control div#fb-control-middle {
+	float: left;
+	width: 40%;
+	text-align: center;
+}
+
+div#fb-control div#fb-control-right {
+	float: right;
+	width: 26%;
+	text-align: right;
+	padding-right: 28px;
+}
+
+#fb-control-left a {
+	margin-right: 12px;
+	float: left;
+}
+
+#fb-control-left div.msg-cart {
+	height: 32px;
+	width: 130px;
+	font-size: 0.8em;
+	float: left;
+}

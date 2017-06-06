@@ -1,0 +1,23 @@
+<!--
+ ! Context configuration file for Tomcat 5.5.x
+ !
+ ! $Id: context.xml,v 1.4 2007/09/23 12:20:48 ds Exp $
+ !
+ -->
+
+
+<Context cookies="true" reloadable="true">
+
+  <!--
+  <Valve className="org.apache.catalina.valves.RemoteAddrValve"
+    allow="127.0.0.1"/>
+  -->
+
+  <Logger className="org.apache.catalina.logger.FileLogger"
+          prefix="opac2-"
+          suffix=".log"
+          timestamp="false" />
+
+
+</Context>
+

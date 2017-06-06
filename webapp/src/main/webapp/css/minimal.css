@@ -1,0 +1,6 @@
+body	{ font-size: 85%; font-family: verdana,helvetic,arial; }
+table	{ border-collapse: collapse; border: solid 1px #aaa; 
+	font-family: verdana,helvetic,arial; font-size: 85%;
+}
+caption	{  font-family: verdana,helvetic,arial; background: #ddd; border: solid 1px #aaa; border-bottom: none; }
+th, td	{ padding: 1px 4px; text-align: left;  }

@@ -1,0 +1,55 @@
+html {
+  font-size: 62.5%;
+  font-family: tahoma, verdana, sans-serif;
+}
+
+a img {
+  border: none;
+}
+
+.add-to-cart, .remove-to-cart {
+  display: none;
+}
+
+#cart {
+  font-size: 1em;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+#cart p {
+  font-size: 1em;
+}
+
+#cart table {
+  border-collapse: collapse;
+  border: 1px solid #eee;
+  font-size: 1.2em;
+  width: 100%;
+}
+
+#cart td {
+  border: 1px solid #eee;
+  padding: 2px 10px 6px 10px;
+  vertical-align: middle;
+  width: 1%;
+  white-space: nowrap;
+}
+
+#cart th {
+  border: 1px solid #eee;
+  padding: 2px 10px 6px 10px;
+  vertical-align: top;
+  background-color: #EFEFEF;
+  text-align: left;
+}
+
+#topbox {
+  margin-bottom: 9px;
+}
+
+#cart .std-box-grey p {
+  margin: 3px;
+  padding: 5px 0px;
+  font-size: 1.1em;
+}

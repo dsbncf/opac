@@ -1,0 +1,120 @@
+body,html {
+	padding: 0px;
+	margin: 0px;
+	font-family: verdana,helvetica,arial,sans-serif;
+}
+
+#page {
+	width: 740px;
+	margin: auto;
+}
+
+/* -------------- testa -------------- */
+
+#testa {
+	font-size: 10pt;
+	background-image: url(../img/bg_header.jpg);
+	height: 52px;
+}
+
+#testa #img {
+	float: left;
+	margin-right: 8px;
+	padding: 1px 0px 1px 1px;
+}
+
+#testa #acc {
+	float: right;
+	text-align: right;
+	vertical-align: top;
+	padding-right: 8px;
+	height:50px;
+	/*
+	background:white; padding-left:4px;
+	margin-right:1px; margin-top:1px;
+	*/
+}
+
+
+#testa .polo {
+}
+
+#testa .top-bncf {
+	font-family: Times Roman;
+	font-size: 1.6em;
+}
+
+/* --------------  main -------------- */
+#main {
+	padding: 2px;
+}
+
+
+hr {
+	height: 1px;
+	border: 0;
+	background: #ccc;
+}
+
+/* ----------- topmenu --------------- */
+
+div.ricmenu {
+	clear: both;
+	text-align: center;
+	font-size: 12px;
+	padding-top: 8px;
+}
+
+a.testata {
+	white-space: nowrap;
+	text-decoration: none;
+}
+
+a.testata img {
+	vertical-align: middle;
+}
+
+/* ----------- generici --------------- */
+
+div.clearboth {
+	clear: both;
+  font-size: 0px;
+  width: 1px;
+  height: 1px;
+}
+
+/* ----------- links --------------- */
+a {
+	text-decoration: none;
+}
+
+a:visited {
+  color: blue;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: darkblue;
+}
+
+a img {
+  border: none;
+  text-decoration: none;
+}
+
+/* ----------- box grigi --------------- */
+
+.std-box-grey {
+	background-color: #EFEFEF;
+	border: 1px solid #CCC;
+	padding: 0px; margin-top: 8px;
+}
+
+.std-title-grey {
+	background-color: #DDD;
+	padding: 2px 5px;
+	font-weight: bold;
+	font-size: 1.1em;
+	color: #444;
+}
+

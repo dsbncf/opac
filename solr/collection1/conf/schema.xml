@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<schema name="opac" version="1.2">
+
+
+ <fields>
+
+	<field name="_version_" type="long" indexed="true" stored="true"/>
+
+	<field name="idn"	required="true" type="lckey"	indexed="true"	stored="true"	multiValued="false" /> 
+	<field name="bid"		type="lowercase"	indexed="true"	stored="false"	multiValued="true" /> 
+	<field name="cid"		type="string"	indexed="true"	stored="false"	multiValued="true" /> 
+	<field name="vid"		type="string"	indexed="true"	stored="false"	multiValued="true" /> 
+	<field name="xml"		type="string"	indexed="false"	stored="true"	 />
+	<field name="anno1"		type="int"	indexed="true"	stored="true" /> 
+	<field name="anno2"		type="string"	indexed="true"	stored="false" /> 
+	<field name="autore"		type="string"	indexed="true"	stored="false"	multiValued="true" /> 
+	<field name="biblioteca"	type="string"	indexed="true"	stored="false"	multiValued="true" /> 
+	<field name="categoria"	type="string"	indexed="true"	stored="true"	multiValued="true" /> 
+	<field name="collana"		type="string"	indexed="true"	stored="false"	multiValued="true" /> 
+	<field name="datains"		type="string"	indexed="true"	stored="false" /> 
+	<field name="dataagg"		type="string"	indexed="true"	stored="false" /> 
+	<field name="dewey_cod1"	type="string"	indexed="true"	stored="false"	multiValued="true" /> 
+	<field name="dewey_cod2"	type="string"	indexed="true"	stored="false"	multiValued="true" /> 
+	<field name="dewey_cod3"	type="string"	indexed="true"	stored="false"	multiValued="true" /> 
+	<field name="dewey_cod"	type="string"	indexed="true"	stored="false"	multiValued="true" /> 
+	<field name="dewey"		type="string"	indexed="false"	stored="false"	multiValued="true" /> 
+	<field name="dewey_text"	type="string"	indexed="false"	stored="false"	multiValued="true" /> 
+	<field name="descrittore"	type="verbatim"	indexed="false"	stored="false"	multiValued="true" /> 
+	<field name="lingua"		type="string"	indexed="true"	stored="false"	multiValued="true" /> 
+	<field name="natura"		type="string"	indexed="true"	stored="true"	multiValued="true" /> 
+	<field name="soggetto_cid"	type="string"	indexed="true"	stored="false"	multiValued="true" /> 
+	<field name="tiposogg"		type="string"	indexed="true"	stored="false"	multiValued="true" /> 
+	<!-- da convertire in soggetto_kw -->
+	<field name="soggetto_text"	type="string"	indexed="true"	stored="false"	multiValued="true" /> 
+	<field name="titolo"		type="string"	indexed="false"	stored="false"	multiValued="true" />
+	<field name="tipodig"		type="string"	indexed="true"	stored="false" /> 
+	<field name="tipomat"		type="string"	indexed="true"	stored="false" /> 
+	<field name="autore_dp"	type="string"   indexed="false"	stored="true"	 />
+	<field name="titolo_dp"	type="string"   indexed="false"	stored="true"	 />
+
+	<!-- fields for sorting-->
+	<field name="titolo_srt" type="lckey"	indexed="true"	stored="false"	multiValued="false" /> 
+	<field name="autore_srt" type="lckey"	indexed="true"	stored="false"	multiValued="false" /> 
+
+	<field name="keywords"		type="text"	indexed="true"  stored="false" multiValued="true" /> 
+
+	<!-- keywords: 205_kw 206_kw 207_kw 208_kw 215_kw 686_kw 950e33_kw
+		mid_kw 950e_kw 956c_kw note_kw titoli_kw titolo_kw			-->
+
+	<dynamicField name="*_kw" type="text"    indexed="true"  stored="false" multiValued="true"/>
+
+	<!-- definitions for Field Faceting -->
+
+	<field name="anno_fc"		type="string"	indexed="true"	stored="false"	multiValued="true"  /> 
+	<field name="luogo_fc"		type="string"	indexed="true"	stored="false"	multiValued="true"  /> 
+	<field name="natura_fc"	type="string"	indexed="true"	stored="false"	multiValued="true"  /> 
+	<field name="paese_fc"		type="string"	indexed="true"	stored="false"	multiValued="true"  /> 
+	<field name="lingua_fc"	type="string"	indexed="true"	stored="false"	multiValued="true"  /> 
+	<field name="editore_fc"	type="string"	indexed="true"	stored="false"	multiValued="true" /> 
+	<field name="collana_fc"	type="string"	indexed="true"	stored="false"	multiValued="true"  /> 
+	<field name="biblioteca_fc"	type="string"	indexed="true"	stored="false"	multiValued="true"  />
+	<field name="annopub_fc"	type="string"	indexed="true"	stored="false"	multiValued="true"  />
+	<field name="categoria_fc"	type="string"	indexed="true"	stored="false"	multiValued="true"  /> 
+	<field name="deweycod_fc"	type="string"	indexed="true"	stored="false"	multiValued="true"  /> 
+	<field name="deweyall_fc"	type="string"	indexed="true"	stored="false"	multiValued="true"  /> 
+	<field name="deweyediz_fc"	type="string"	indexed="true"	stored="false"	multiValued="true"  /> 
+	<field name="dewey_fc"		type="verbatim"	indexed="true"	stored="false"	multiValued="true"  /> 
+	<field name="descrittore_fc"	type="verbatim"	indexed="true"	stored="false"	multiValued="true"  /> 
+	<field name="soggetto_fc"	type="verbatim"	indexed="true"	stored="false"	multiValued="true"  /> 
+	<field name="titolo_fc"	type="verbatim"	indexed="true"	stored="false"	multiValued="true"  /> 
+	<field name="autore_fc"	type="verbatim"	indexed="true"	stored="false"	multiValued="true"  /> 
+	<field name="opera_fc"		type="verbatim"	indexed="true"	stored="false"	multiValued="false" /> 
+
+
+	<field name="text_rev" type="text_rev" indexed="true" stored="false" multiValued="true"/>
+
+	<field name="manu_exact" type="string" indexed="true" stored="false"/>
+
+	<field name="indexed" type="date" indexed="true" stored="true" default="NOW" multiValued="false"/>
+
+	<!-- dynamic fields -->
+
+	<dynamicField name="*_i"  type="int"    indexed="true"  stored="true"/>
+	<dynamicField name="*_s"  type="string"  indexed="true"  stored="true"/>
+	<dynamicField name="*_l"  type="long"   indexed="true"  stored="true"/>
+	<dynamicField name="*_t"  type="text"    indexed="true"  stored="true"/>
+	<dynamicField name="*_b"  type="boolean" indexed="true"  stored="true"/>
+	<dynamicField name="*_f"  type="float"  indexed="true"  stored="true"/>
+	<dynamicField name="*_d"  type="double" indexed="true"  stored="true"/>
+	<dynamicField name="*_dt" type="date"    indexed="true"  stored="true"/>
+
+	<!-- some trie-coded dynamic fields for faster range queries -->
+
+	<dynamicField name="*_ti" type="tint"    indexed="true"  stored="true"/>
+	<dynamicField name="*_tl" type="tlong"   indexed="true"  stored="true"/>
+	<dynamicField name="*_tf" type="tfloat"  indexed="true"  stored="true"/>
+	<dynamicField name="*_td" type="tdouble" indexed="true"  stored="true"/>
+	<dynamicField name="*_tdt" type="tdate"  indexed="true"  stored="true"/>
+
+	<dynamicField name="attr_*" type="textgen" indexed="true" stored="true" multiValued="true"/>
+
+
+  </fields>
+
+
+ <uniqueKey>idn</uniqueKey>
+
+ <defaultSearchField>keywords</defaultSearchField>
+
+ <solrQueryParser defaultOperator="OR"/>
+
+<!-- copy to keywords -->
+
+ <copyField dest="keywords" source="idn" />
+ <copyField dest="keywords" source="*_kw" maxChars="8000" />
+ <copyField dest="keywords" source="dewey" maxChars="8000" />
+ <copyField dest="dewey_kw" source="dewey" maxChars="1000" />
+
+<!-- copy for Faceting -->
+
+ <copyField dest="anno_fc"		source="anno1"		/>
+ <copyField dest="luogo_fc"		source="luogo_kw"	/>
+ <copyField dest="natura_fc"		source="natura"		/>
+ <copyField dest="lingua_fc"		source="lingua"		/>
+ <copyField dest="collana_fc"		source="collana"	/>
+ <copyField dest="biblioteca_fc"	source="biblioteca"	/>
+ <copyField dest="categoria_fc"		source="categoria"	/>
+ <copyField dest="deweycod_fc"		source="dewey_cod"	/>
+ <copyField dest="deweyall_fc"		source="dewey"		/>
+ <copyField dest="dewey_fc"		source="dewey_text"	/>
+ <copyField dest="titolo_fc"		source="titolo"		/>
+ <copyField dest="soggetto_fc"		source="soggetto_text"	/>
+
+
+ <types>
+
+	<fieldType name="string" class="solr.StrField" sortMissingLast="true" omitNorms="true"/>
+	<fieldType name="boolean" class="solr.BoolField" sortMissingLast="true" omitNorms="true"/>
+	<fieldType name="int" class="solr.TrieIntField" precisionStep="0" omitNorms="true" positionIncrementGap="0"/>
+	<fieldType name="float" class="solr.TrieFloatField" precisionStep="0" omitNorms="true" positionIncrementGap="0"/>
+	<fieldType name="long" class="solr.TrieLongField" precisionStep="0" omitNorms="true" positionIncrementGap="0"/>
+	<fieldType name="double" class="solr.TrieDoubleField" precisionStep="0" omitNorms="true" positionIncrementGap="0"/>
+	<fieldType name="tint" class="solr.TrieIntField" precisionStep="8" omitNorms="true" positionIncrementGap="0"/>
+	<fieldType name="tfloat" class="solr.TrieFloatField" precisionStep="8" omitNorms="true" positionIncrementGap="0"/>
+	<fieldType name="tlong" class="solr.TrieLongField" precisionStep="8" omitNorms="true" positionIncrementGap="0"/>
+	<fieldType name="tdouble" class="solr.TrieDoubleField" precisionStep="8" omitNorms="true" positionIncrementGap="0"/>
+	<fieldType name="date" class="solr.TrieDateField" omitNorms="true" precisionStep="0" positionIncrementGap="0"/>
+	<fieldType name="tdate" class="solr.TrieDateField" omitNorms="true" precisionStep="6" positionIncrementGap="0"/>
+
+
+	<fieldType name="verbatim" class="solr.StrField" omitNorms="true" sortMissingLast="true"/>
+
+
+
+    <!-- lckey : text field - not tokenized, lowercase, trimmed, only alpha-numeric -->
+
+    <fieldType name="lckey" class="solr.TextField" sortMissingLast="true">
+      <analyzer type="index">
+        <tokenizer class="solr.KeywordTokenizerFactory"/>
+        <filter class="solr.LowerCaseFilterFactory" />
+        <filter class="solr.PatternReplaceFilterFactory"
+                pattern="([^a-z0-9])" replacement="" replace="all" />
+        <filter class="solr.TrimFilterFactory" />
+      </analyzer>
+      <analyzer type="query">
+        <tokenizer class="solr.KeywordTokenizerFactory"/>
+        <filter class="solr.LowerCaseFilterFactory" />
+        <filter class="solr.PatternReplaceFilterFactory"
+                pattern="([^a-z0-9])" replacement="" replace="all" />
+        <filter class="solr.TrimFilterFactory" />
+      </analyzer>
+    </fieldType>
+
+
+    <!-- text : solr.TextField field - tokenized  -->
+
+    <fieldType name="text" class="solr.TextField" positionIncrementGap="100">
+	<analyzer type="index">
+		<charFilter class="solr.MappingCharFilterFactory" mapping="char-mapping.txt"/>
+		<tokenizer class="solr.WhitespaceTokenizerFactory"/>
+
+		<filter class="solr.WordDelimiterFilterFactory"
+			generateWordParts="1"	generateNumberParts="1"
+			catenateWords="1"	catenateNumbers="0"	catenateAll="0"
+			splitOnCaseChange="1"	splitOnNumerics="0" />
+		<filter class="solr.LowerCaseFilterFactory"/>
+	</analyzer>
+
+	<analyzer type="query">
+		<charFilter class="solr.MappingCharFilterFactory" mapping="char-mapping.txt"/>
+		<tokenizer class="solr.WhitespaceTokenizerFactory"/>
+
+		<charFilter class="solr.MappingCharFilterFactory" mapping="char-mapping.txt"/>
+		<filter class="solr.WordDelimiterFilterFactory"
+			generateWordParts="1"	generateNumberParts="1"
+			catenateWords="0"	catenateNumbers="0"	catenateAll="0"
+			splitOnCaseChange="1"	splitOnNumerics="0" />
+
+		<filter class="solr.LowerCaseFilterFactory"/>
+	</analyzer>
+    </fieldType>
+
+
+    <!-- A general unstemmed text field - good if one does not know the language of the field -->
+    <fieldType name="textgen" class="solr.TextField" positionIncrementGap="100">
+      <analyzer type="index">
+        <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+        <filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords.txt" enablePositionIncrements="true" />
+        <filter class="solr.WordDelimiterFilterFactory" generateWordParts="1" generateNumberParts="1" catenateWords="1" catenateNumbers="1" catenateAll="0" splitOnCaseChange="0"/>
+        <filter class="solr.LowerCaseFilterFactory"/>
+      </analyzer>
+      <analyzer type="query">
+        <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+        <filter class="solr.SynonymFilterFactory" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
+        <filter class="solr.StopFilterFactory"
+                ignoreCase="true"
+                words="stopwords.txt"
+                enablePositionIncrements="true"
+                />
+        <filter class="solr.WordDelimiterFilterFactory" generateWordParts="1" generateNumberParts="1" catenateWords="0" catenateNumbers="0" catenateAll="0" splitOnCaseChange="0"/>
+        <filter class="solr.LowerCaseFilterFactory"/>
+      </analyzer>
+    </fieldType>
+
+
+    <!-- A general unstemmed text field that indexes tokens normally and also
+         reversed (via ReversedWildcardFilterFactory), to enable more efficient 
+	 leading wildcard queries. -->
+    <fieldType name="text_rev" class="solr.TextField" positionIncrementGap="100">
+      <analyzer type="index">
+        <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+        <filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords.txt" enablePositionIncrements="true" />
+        <filter class="solr.WordDelimiterFilterFactory" generateWordParts="1" generateNumberParts="1" catenateWords="1" catenateNumbers="1" catenateAll="0" splitOnCaseChange="0"/>
+        <filter class="solr.LowerCaseFilterFactory"/>
+        <filter class="solr.ReversedWildcardFilterFactory" withOriginal="true"
+           maxPosAsterisk="3" maxPosQuestion="2" maxFractionAsterisk="0.33"/>
+      </analyzer>
+      <analyzer type="query">
+        <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+        <filter class="solr.SynonymFilterFactory" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
+        <filter class="solr.StopFilterFactory"
+                ignoreCase="true"
+                words="stopwords.txt"
+                enablePositionIncrements="true"
+                />
+        <filter class="solr.WordDelimiterFilterFactory" generateWordParts="1" generateNumberParts="1" catenateWords="0" catenateNumbers="0" catenateAll="0" splitOnCaseChange="0"/>
+        <filter class="solr.LowerCaseFilterFactory"/>
+      </analyzer>
+    </fieldType>
+
+
+    <!-- lowercases the entire field value, keeping it as a single token.  -->
+    <fieldType name="lowercase" class="solr.TextField" positionIncrementGap="100">
+      <analyzer>
+        <tokenizer class="solr.KeywordTokenizerFactory"/>
+        <filter class="solr.LowerCaseFilterFactory" />
+      </analyzer>
+    </fieldType>
+
+
+ </types>
+
+
+</schema>

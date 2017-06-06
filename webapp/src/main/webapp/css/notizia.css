@@ -1,0 +1,196 @@
+
+hr	{
+	background-color: #aaa;
+	height: 1px;
+	border: none;
+}
+
+.titolo{
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 1.1em;
+  font-weight: bold;
+}
+
+.edizione {
+	font-size: 1em;
+}
+
+.materiale {
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-style: italic;
+}
+
+.collocazione {
+	font-style: italic;
+}
+
+.note {
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 1em;
+}
+
+.avv {
+	font-family: times;
+	font-size: 1em;
+	padding-left: 8px;
+}
+
+.colloc {
+	border: 1px solid #E0E0E0;
+}
+.colloc td {
+	font-size: 0.9em;
+}
+
+#notizia {
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 0.8em;
+	margin: auto;
+	margin-top: 2em;
+}
+
+#notizia #notizia-nav {
+	background-color: #EFEFEF;
+	width: 100%;
+	height: 26px;
+	line-height: 26px;
+	margin-bottom: 15px;
+	padding: 0px 0px;
+}
+
+#notizia .notizia-nav-left {
+	float: left;
+	padding-left: 6px;
+}
+
+#notizia .notizia-nav-right {
+	float: right;
+	margin-right: 6px
+}
+
+#notizia .notizia-nav-right a {
+	text-decoration: none;
+}
+
+#notizia .notizia-nav-right a img, #links .links-left a img {
+	border: none;
+	text-decoration: none;
+	vertical-align: middle;
+}
+
+#notizia .notizia-nav-right form { 
+	display: inline;
+	padding: 0px;
+	margin: 0px;
+	width: 22px;
+	height: 22px;
+}
+
+#notizia .notizia-nav-right form button {
+	margin: 0px;
+	width: 22px;
+	height: 22px;
+	line-height: 22px;
+	padding: 0px;
+	font-size: 1px;
+}
+
+#notizia .notizia-nav-right form button img {
+	margin: 0px;
+}
+
+#notizia .notizia-nav-right form.disabled button img {
+	opacity:0.3;
+	filter:alpha(opacity=30);
+}
+
+#notizia .notizia-nav-right form button::-moz-focus-inner { /* remove extra-padding button for FF */
+	border: 0px;
+	padding: 0px;
+} 
+
+
+#links {
+	font-size: 0.9em;
+	font-family: verdana, arial, helvetica, sans-serif;
+}
+
+#links .links-left {
+	float: left;
+}
+
+
+#links .links-right {
+	float: right;
+}
+
+#links div.msg-cart {
+	height: 32px;
+	width: 130px;
+	font-size: 9px;
+	float: right;
+}
+
+/* stili relativi al salvataggio del suggerimento */
+
+div#bid-suggest {
+  width: 600px;
+}
+
+div#bid-suggest form#bid-suggest-form {
+  font-size: 11px;
+}
+
+div#bid-suggest form#bid-suggest-form fieldset {
+  padding: 15px;
+  border: 1px solid #E0E0E0;
+}
+
+div#bid-suggest form#bid-suggest-form fieldset legend {
+  padding: 4px;
+  font-weight: bold;
+  color: #7F7F7F;
+  font-size: 13px;
+}
+
+div#bid-suggest form#bid-suggest-form fieldset div.left-label {
+  float: left;
+  width: 110px;
+  margin-top: 5px;
+}
+
+div#bid-suggest form#bid-suggest-form fieldset div.left {
+  float: left;
+  margin-top: 5px;
+}
+
+div#bid-suggest form#bid-suggest-form fieldset input {
+  width: 280px;
+  display: block;
+  float: left;
+}
+
+div#bid-suggest form#bid-suggest-form fieldset textarea {
+  width: 280px;
+  height: 120px;
+  display: block;
+  float: left;
+}
+
+div#bid-suggest form#bid-suggest-form fieldset div.left span.suggest-error {
+  color: red;
+  padding-left: 5px;
+  display: none;
+}
+
+div#bid-suggest form#bid-suggest-form fieldset div.suggest-error {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 20px;
+  display: none;
+}
+
+div#bid-suggest form#bid-suggest-form div.buttons {
+  padding-left: 110px;
+  margin-top: 5px;
+}

@@ -1,0 +1,263 @@
+ body {
+	margin: 0px;
+	padding: 0px;
+}
+
+html {
+	font-size: 62.5%;
+	font-family: tahoma, verdana, sans-serif;
+}
+
+a:link, a:visited, a:active {
+	text-decoration: none;
+	color: #2040C0;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+#logo {
+	width: 121px;
+	height: 59px;
+	float: left;
+}
+
+#testata {
+	background-color: #B8CDD8;
+}
+
+#topsect {
+	background-color: #B8CDD8;
+}
+
+#topmenu {
+	font-size: 1.1em;
+	border: 1px solid #CCC;
+	padding: 15px 10px;
+	line-height: 15px;
+	margin-bottom: 9px;
+}
+
+#topbox {
+	margin-bottom: 9px;
+}
+
+.searchform {
+	margin-top: 9px;
+	margin-left: 3px;
+	padding-bottom: 9px;
+}
+
+.searchform span {
+	margin-right: 4px;
+}
+
+.searchform span.spacebottom input, .searchform span.spacebottom select {
+	margin-bottom: 3px;
+}
+.searchform select {
+	padding-left: 0.2em;
+}
+.searchform table  {
+	border: 1px solid #ccc;
+	border-collapse: collapse;
+}
+.searchform td  {
+	border: none;
+	border-bottom: 1px solid #ccc;
+}
+.searchform td.label  {
+	text-align: left;
+	vertical-align: middle;
+	border-left: 1px solid #ccc;
+	padding-left: 3px;
+	width: 4em;
+}
+.searchform td.input  {
+	padding-right: 0.4em;
+}
+
+#content {
+	padding: 4px;
+	padding-top: 0px;
+}
+
+#filterbox {
+	float: left;
+	width: 200px;
+	margin-left: -100%;
+}
+
+#filterbox .std-box-grey p {
+	margin: 3px;
+	padding: 0px;
+}
+
+#filterbox-static {
+	float: left;
+	width: 200px;
+}
+
+#filterbox-static .std-box-grey p {
+	margin: 3px 3px;
+	padding: 0px;
+}
+
+#resultcontainer {
+	padding-top: 8px;
+	float: left;
+	width: 100%;
+}
+
+#result {
+	margin-left: 220px;
+	margin-right: 20px;
+}
+
+#result p.btm-border {
+	margin-top: 0px;
+	padding-top: 0px;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	font-size: 1.2em;
+	width:90%;
+	border-bottom: solid 1px #E0E0E0;
+}
+
+#result table {
+	border-collapse: collapse;
+	border: 1px solid #eee;
+	font-size: 1.2em;
+	width: 100%;
+}
+#result td {
+	border: 1px solid #eee;
+	padding: 2px 10px 6px 10px;
+	vertical-align: top;
+}
+
+#result td.max-col-wrap {
+	width: 74%;
+}
+
+#result td.min-col-nowrap {
+	width: 1%;
+	white-space: nowrap;
+}
+
+#result td.med-col-wrap {
+	width: 35%;
+}
+
+#result td.small-font {
+	font-size: .9em;
+}
+
+#result tr.norm { background: none;	}
+#result tr.high { background: #fff8c8;	}
+
+#result th {
+	border: 1px solid #eee;
+	padding: 2px 10px 6px 10px;
+	vertical-align: top;
+	background-color: #EFEFEF;
+	text-align: left;
+}
+
+
+#lista table {
+	border-collapse: collapse;
+	border: 1px solid #eee;
+	font-size: 1.2em;
+	width: 80%;
+}
+#lista td {
+	border: 1px solid #eee;
+	padding: 2px 4px 6px 2px;
+	vertical-align: top;
+}
+#lista tr.norm { background: none;	}
+#lista tr.high { background: #fff8c8;	}
+
+
+.graynum {
+	color: #606060;
+}
+
+.clearboth {
+	height: 0px;
+	width: 0px;
+	clear: both;
+}
+
+.dx {
+	float: right;
+}
+
+.sx {
+	float: left;
+}
+
+
+#browserform {
+	margin-top: 9px;
+	margin-left: 9px;
+}
+
+
+a img {
+	border: none;
+}
+
+/* Corregge bordo dotted su firefox */
+a.expand-collapse:active, a.expand-collapse:focus {
+	outline: 0;
+}
+
+a.std-page:hover {
+	background-color: #EEE;
+}
+
+b.std-page {
+	background-color: #F4F4F4;
+}
+
+a.std-page, b.std-page {
+	display: block;
+	float: left;
+	text-align: center;
+	line-height: 20px;
+	padding: 0px 4px;
+	min-width: 15px;
+	height: 20px;
+	margin: 0px 2px;
+	border: 1px solid #EEE;
+}
+
+a.std-page img {
+	padding-top: 5px;
+}
+
+div#didyoumean {
+  margin: 20px 0px;
+  font-size: 1.2em;
+  line-height: 1.4em;
+}
+
+/* liste */
+
+form.list-form {
+  display: inline;
+}
+
+form.list-form button {
+  padding: 2px 6px;
+  line-height: 22px;
+}
+
+form.list-form button img.disabled {
+  opacity:0.3;
+  filter:alpha(opacity=30);
+}
+

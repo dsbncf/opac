@@ -1,0 +1,31 @@
+body,html {
+	border: 0px;
+	margin: 0px;
+	font-family: verdana,helvetica,arial;
+}
+#topmenu {
+	font-size: 10pt;
+	background: #f0f0ff;
+	border: solid 1px #eee;
+}
+#topmenu div{
+}
+#topmenu #img {
+	float: left;
+	margin-right: 12px;
+	padding: 1px;
+}
+#topmenu #acc {
+	text-align: right;
+	vertical-align: top;
+	padding-right: 8px;
+}
+
+#dym-form {
+	font-family: helvetica,arial,verdana;
+	height: 2em;
+	font-size: 0.8em;
+	padding: 8px !important;
+	border-bottom: 1px solid #e0e0e0;
+	margin-bottom: 3pt;
+}

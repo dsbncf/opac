@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app version="2.4"
+	xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+		http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+ <display-name>Opac2 - Solr interface </display-name>
+
+
+  <!-- ================== security constraint  ================== -->
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>AdminPages</web-resource-name>
+        <description> accessible by authorised users </description>
+        <url-pattern>/admin/*</url-pattern>
+        <http-method>GET</http-method>
+    </web-resource-collection>
+    <auth-constraint>
+      <description>The roles wich have access</description>
+      <role-name>opacadmin</role-name>
+    </auth-constraint>
+  </security-constraint>
+  <login-config>
+    <auth-method>BASIC</auth-method>
+    <realm-name>BNCF Opac: funzioni di gestione</realm-name>
+  </login-config>
+  <security-role><role-name>opacadmin</role-name></security-role>
+
+
+
+ <!-- ======== Servlet Configuration  ======== -->
+
+ <!--
+    <servlet>
+	<servlet-name>Log4jConfiguration</servlet-name>
+	<display-name>Log4j configuration Servlet</display-name>
+	<servlet-class>bncf.opac.servlet.Log4jConfigurationServlet</servlet-class>
+	<init-param>
+	  <param-name>log4j-properties</param-name>
+	  <param-value>log4j.properties</param-value>
+	</init-param>
+        <load-on-startup>5</load-on-startup>
+    </servlet>
+    -->
+
+    <servlet>
+        <servlet-name>AppConfigServlet</servlet-name>
+        <servlet-class>bncf.opac.servlet.AppConfigServlet</servlet-class>
+	<init-param>	<param-name>datasources</param-name>
+			<param-value>@DATASOURCE_REFNAME@</param-value>
+	</init-param>
+        <load-on-startup>10</load-on-startup>
+    </servlet>
+
+
+    <servlet>
+        <servlet-name>InfoServlet</servlet-name>
+        <servlet-class>bncf.opac.servlet.InfoServlet</servlet-class>
+	<init-param>	<param-name>solr-location</param-name>
+			<param-value>@SOLR_LOCATION@</param-value>
+	</init-param>
+	<init-param>	<param-name>update-interval</param-name>
+			<param-value>24</param-value><!-- intervall in hours, default 24 -->
+	</init-param>
+	<init-param>	<param-name>deweytree-datafile</param-name>
+			<param-value>deweytree.txt</param-value>
+	</init-param>
+	<init-param>	<param-name>DataSource</param-name>
+			<param-value>@DATASOURCE_REFNAME@</param-value>
+	</init-param>
+        <load-on-startup>15</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <servlet-name>SearchServlet</servlet-name>
+        <servlet-class>bncf.opac.servlet.SearchServlet</servlet-class>
+	<init-param>	<param-name>solr-location</param-name>
+			<param-value>@SOLR_LOCATION@</param-value>
+	</init-param>
+  <!-- il param facetLimitMin deve sempre essere minore del FacetSearchHandler.DEFAULT_FACELIMIT -->
+	<init-param>	<param-name>facetLimitMin</param-name>
+			<param-value>10</param-value>
+	</init-param>
+	<init-param>	<param-name>facetLimitMax</param-name>
+			<param-value>50</param-value>
+	</init-param>
+	<init-param>	<param-name>didyoumeanIndexLocation</param-name>
+			<param-value>@DIDYOUMEAN_INDEXLOCATION@</param-value>
+	</init-param>
+	<init-param>	<param-name>didyoumeanAccuracy</param-name>
+			<param-value>0.7F</param-value>
+	</init-param>
+  <!-- numero minimo di risultati di una ricerca per cui did you mean deve essere lanciato.
+       ovvero: se i risultati sono piu' di questo parametro, did you mean non viene utilizzato -->
+	<init-param>	<param-name>maxResultsForDidyoumean</param-name>
+			<param-value>5</param-value>
+	</init-param>didyoumeanMaxTermCount
+  <!-- numero massimo di termini suggeriti da didyoumean da mostrare -->
+	<init-param>	<param-name>didyoumeanMaxTermCount</param-name>
+			<param-value>5</param-value>
+	</init-param>
+	<init-param>	<param-name>maxResultForExport</param-name>
+			<param-value>@SEARCHEXPORT_MAXRESULT@</param-value>
+	</init-param>
+        <load-on-startup>20</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <servlet-name>ExportSearchServlet</servlet-name>
+        <servlet-class>bncf.opac.servlet.ExportSearchServlet</servlet-class>
+	<init-param>	<param-name>solr-location</param-name>
+			<param-value>@SOLR_LOCATION@</param-value>
+	</init-param>
+	<init-param>	<param-name>maxResult</param-name>
+			<param-value>@SEARCHEXPORT_MAXRESULT@</param-value>
+	</init-param>
+	<init-param>	<param-name>exportXslIt</param-name>
+			<param-value>WEB-INF\searchexport_it.xsl</param-value>
+	</init-param>
+	<init-param>	<param-name>exportXslEn</param-name>
+			<param-value>WEB-INF\searchexport_en.xsl</param-value>
+	</init-param>
+    </servlet>
+
+
+    <servlet>
+        <servlet-name>CartServlet</servlet-name>
+        <servlet-class>bncf.opac.servlet.CartServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>BidViewerServlet</servlet-name>
+        <servlet-class>bncf.opac.servlet.BidViewerServlet</servlet-class>
+	<init-param>	<param-name>solr-location</param-name>
+			<param-value>@SOLR_LOCATION@</param-value>
+	</init-param>
+        <load-on-startup>30</load-on-startup>
+    </servlet>
+
+<!--
+    <servlet>
+        <servlet-name>didYouMean</servlet-name>
+        <servlet-class>bncf.opac.servlet.DidYouMeanServlet</servlet-class>
+	<init-param>
+	  <param-name>index-location</param-name>
+	  <param-value>@DIDYOUMEAN_INDEXLOCATION@</param-value>
+	</init-param>
+    </servlet>
+-->
+
+    <servlet>
+        <servlet-name>OpacUserServlet</servlet-name>
+        <servlet-class>bncf.opac.servlet.OpacUserServlet</servlet-class>
+      	<init-param>	<param-name>DataSource</param-name>
+      			<param-value>@DATASOURCE_REFNAME@</param-value>
+      	</init-param>
+	<!--
+	<init-param>
+	  <param-name>session-key</param-name>
+	  <param-value>OpacUser</param-value>
+	</init-param>
+	-->
+    </servlet>
+
+    <servlet>
+        <servlet-name>ListBrowserServlet</servlet-name>
+        <servlet-class>bncf.opac.servlet.ListBrowserServlet</servlet-class>
+	<init-param>	<param-name>DataSource</param-name>
+			<param-value>@DATASOURCE_REFNAME@</param-value>
+	</init-param>
+    </servlet>
+
+    <servlet>
+        <servlet-name>DeweyBrowserServlet</servlet-name>
+        <servlet-class>bncf.opac.servlet.DeweyBrowserServlet</servlet-class>
+	<init-param>	<param-name>DataSource</param-name>
+			<param-value>@DATASOURCE_REFNAME@</param-value>
+	</init-param>
+    </servlet>
+
+    <servlet>
+        <servlet-name>Controller</servlet-name>
+        <servlet-class>bncf.opac.servlet.ControllerServlet</servlet-class>
+    </servlet>
+
+
+
+    <servlet>
+        <servlet-name>Sebina</servlet-name>
+        <servlet-class>bncf.opac.servlet.SebinaServlet</servlet-class>
+	<init-param>
+		<param-name>sebina-host</param-name>
+		<param-value>@SEBINA_HOST@</param-value>
+	</init-param>
+	<init-param>
+		<param-name>sebina-port</param-name>
+		<param-value>@SEBINA_PORT@</param-value>
+	</init-param>
+	<init-param>
+		<param-name>sebina-uri</param-name>
+		<param-value>@SEBINA_URI@</param-value>
+	</init-param>
+	<init-param>
+		<param-name>sebina-timeout</param-name>
+		<param-value>@SEBINA_TIMEOUT@</param-value>
+	</init-param>
+    </servlet>
+
+
+
+    <!-- Standard Action Servlet Mapping -->
+
+    <servlet-mapping>
+        <servlet-name>SearchServlet</servlet-name>
+        <url-pattern>/fcsearch</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchServlet</servlet-name>
+        <url-pattern>/fcsearch/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>SearchServlet</servlet-name>
+        <url-pattern>/fcsearchm</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchServlet</servlet-name>
+        <url-pattern>/fcsearchm/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ExportSearchServlet</servlet-name>
+        <url-pattern>/exportsearch</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>CartServlet</servlet-name>
+        <url-pattern>/addbidtocart</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>CartServlet</servlet-name>
+        <url-pattern>/removebidfromcart</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>CartServlet</servlet-name>
+        <url-pattern>/exportcart</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>BidViewerServlet</servlet-name>
+        <url-pattern>/bid/*</url-pattern>
+    </servlet-mapping>
+
+<!--
+    <servlet-mapping>
+        <servlet-name>didYouMean</servlet-name>
+        <url-pattern>/didyoumean</url-pattern>
+    </servlet-mapping>
+-->
+
+    <servlet-mapping>
+        <servlet-name>OpacUserServlet</servlet-name>
+        <url-pattern>/options</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>OpacUserServlet</servlet-name>
+        <url-pattern>/insertsuggestion</url-pattern>
+    </servlet-mapping>
+
+    <!--
+    <servlet-mapping>
+        <servlet-name>Log4jConfiguration</servlet-name>
+        <url-pattern>/admin/log4jConfig</url-pattern>
+    </servlet-mapping>
+    -->
+
+    <servlet-mapping>
+        <servlet-name>InfoServlet</servlet-name>
+        <url-pattern>/admin/info</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ListBrowserServlet</servlet-name>
+        <url-pattern>/list/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>DeweyBrowserServlet</servlet-name>
+        <url-pattern>/deweybrowser/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Controller</servlet-name>
+        <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Sebina</servlet-name>
+        <url-pattern>/abbonamento/*</url-pattern>
+        <url-pattern>/annata/*</url-pattern>
+    </servlet-mapping>
+
+
+
+
+    <!-- Set the session timeout value -->
+
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
+    <!-- The Usual Welcome File List -->
+
+    <welcome-file-list>
+	    <!--
+        <welcome-file>home</welcome-file>
+	-->
+	<welcome-file>fcsearch</welcome-file>
+    </welcome-file-list>
+
+  <resource-ref>
+    <description>DB Connection</description>
+    <res-ref-name>@DATASOURCE_REFNAME@</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+
+  <resource-ref>
+      <description>
+        Resource reference to a factory for javax.mail.Session instances
+        that may be used for sending electronic mail messages,
+        preconfigured to connect to the appropriate SMTP server.
+      </description>
+      <res-ref-name>mail/Session</res-ref-name>
+      <res-type>javax.mail.Session</res-type>
+      <res-auth>Container</res-auth>
+  </resource-ref>
+
+
+
+</web-app>
